@@ -1,4 +1,52 @@
+import { useState } from "react";
+import Carousel from "react-bootstrap/Carousel";
+
 const Portfolio = () => {
+  const projects = [
+    {
+      id: 1,
+      name: "Famdo",
+      description: "To-do List Website Project",
+      category: "MERN Stack Project",
+      date: "23 August, 2023",
+      images: [
+        "./assets/img/Famdo-1.png",
+        "./assets/img/Famdo-2.png",
+        "./assets/img/Famdo-3.png",
+        "./assets/img/Famdo-4.png"
+      ],
+      live: "https://famdo.netlify.app/"
+    },
+    {
+      id: 2,
+      name: "CineMirage",
+      description: "Movie Recommendation Project",
+      category: "Mern Stack Project",
+      date: "16 May, 2025",
+      images: [
+        "./assets/img/CineMirage-1.png",
+        "./assets/img/CineMirage-2.png",
+        "./assets/img/CineMirage-3.png"
+      ],
+      live: "https://mahmoudsaad1307.github.io/DEPI-MoviesApp/"
+    },
+    {
+      id: 3,
+      name: "halweyat-mama",
+      description: "Dashboard Project",
+      category: "Web design",
+      date: "09 April, 2023",
+      images: [
+        "./assets/img/halweyat-mama-1.png",
+        "./assets/img/halweyat-mama-2.png",
+        "./assets/img/halweyat-mama-3.png"
+      ],
+      live: "https://halweyat-mama.netlify.app/"
+    }
+  ];
+
+  const [selectedProject, setSelectedProject] = useState(projects[0]);
+
   return (
     <>
       <section id="portfolio" className="portfolio section">
@@ -6,99 +54,64 @@ const Portfolio = () => {
           <h2>Portfolio</h2>
         </div>
         <div className="container">
-          <div
-            className="isotope-layout"
-            data-default-filter="*"
-            data-layout="masonry"
-            data-sort="original-order"
-          >
-            <div
-              className="row gy-4 isotope-container"
-              data-aos="fade-up"
-              data-aos-delay={200}
-            >
-              <div className="col-lg-6 col-md-8 portfolio-item isotope-item filter-app">
-                <img
-                  src="./assets/img/medicio-1.png"
-                  className="img-fluid"
-                  alt=""
-                />
-                <div className="portfolio-info">
-                  <h4>Medicio</h4>
-                  <p>Medical Website Project</p>
-                  <a
-                    href="/medicio"
-                    target="_blank"
-                    title="More Details"
-                    className="details-link"
-                  >
-                    <i className="bi bi-link-45deg" />
-                  </a>
+          {/* Portfolio Grid */}
+          <div className="row gy-4 mb-5" data-aos="fade-up" data-aos-delay={200}>
+            {projects.map((project) => (
+              <div key={project.id} className="col-lg-6 col-md-6 portfolio-item">
+                <div 
+                  className={`portfolio-card ${selectedProject.id === project.id ? 'active' : ''}`}
+                  onClick={() => setSelectedProject(project)}
+                >
+                  <img
+                    src={project.images[0]}
+                    className="img-fluid"
+                    alt={project.name}
+                  />
+                  <div className="portfolio-overlay">
+                    <h4>{project.name}</h4>
+                    <p>{project.description}</p>
+                  </div>
                 </div>
               </div>
-              {/* End Portfolio Item */}
-              <div className="col-lg-6 col-md-8 portfolio-item isotope-item filter-product">
-                <img
-                  src="./assets/img/yummy-1.png"
-                  className="img-fluid"
-                  alt=""
-                />
-                <div className="portfolio-info">
-                  <h4>Yummy</h4>
-                  <p>Restaurant Project</p>
-                  <a
-                    href="/yummy"
-                    target="_blank"
-                    title="More Details"
-                    className="details-link"
-                  >
-                    <i className="bi bi-link-45deg" />
-                  </a>
+            ))}
+          </div>
+
+          {/* Project Details */}
+          <div className="portfolio-details" data-aos="fade-up" data-aos-delay={300}>
+            <div className="row justify-content-between gy-4">
+              <div className="col-lg-8">
+                <Carousel className="portfolio-details-slider">
+                  {selectedProject.images.map((image, index) => (
+                    <Carousel.Item key={index} interval={3000}>
+                      <img src={image} alt={`${selectedProject.name} ${index + 1}`} className="d-block w-100" />
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+                <div className="portfolio-description mt-4">
+                  <h2>{selectedProject.name}</h2>
+                  <p>{selectedProject.description}</p>
                 </div>
               </div>
-              {/* End Portfolio Item */}
-              <div className="col-lg-6 col-md-8 portfolio-item isotope-item filter-branding">
-                <img
-                  src="./assets/img/dashboard-1.png"
-                  className="img-fluid"
-                  alt=""
-                />
+              <div className="col-lg-4">
                 <div className="portfolio-info">
-                  <h4>Dashboard</h4>
-                  <p>Dashboard Project</p>
-                  <a
-                    href="/dashboard"
-                    target="_blank"
-                    title="More Details"
-                    className="details-link"
-                  >
-                    <i className="bi bi-link-45deg" />
-                  </a>
+                  <h3>Project Information</h3>
+                  <ul>
+                    <li>
+                      <strong>Category:</strong> {selectedProject.category}
+                    </li>
+                    <li>
+                      <strong>Project Date:</strong> {selectedProject.date}
+                    </li>
+                    <li>
+                      <strong>Project Name:</strong> {selectedProject.name}
+                    </li>
+                    <li>
+                      <strong>Live Demo:</strong> <a href={selectedProject.live} target="_blank">Click here</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              {/* End Portfolio Item */}
-              <div className="col-lg-6 col-md-8 portfolio-item isotope-item filter-books">
-                <img
-                  src="./assets/img/estate-1.png"
-                  className="img-fluid"
-                  alt=""
-                />
-                <div className="portfolio-info">
-                  <h4>EstateAgency</h4>
-                  <p>EstateAgency Project</p>
-                  <a
-                    href="/estateagency"
-                    target="_blank"
-                    title="More Details"
-                    className="details-link"
-                  >
-                    <i className="bi bi-link-45deg" />
-                  </a>
-                </div>
-              </div>
-              {/* End Portfolio Item */}
             </div>
-            {/* End Portfolio Container */}
           </div>
         </div>
       </section>

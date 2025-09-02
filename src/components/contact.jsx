@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Contact = () => {
   return (
     <>
@@ -11,7 +13,12 @@ const Contact = () => {
             <div className="row gy-5">
               <div className="col-lg-4">
                 <div className="info-item d-flex align-items-center">
-                  <i className="bi bi-geo-alt flex-shrink-0" />
+                  <Link
+                    to="https://maps.app.goo.gl/4xL5LvrSRPqUSAvj9"
+                    target="_blank"
+                  >
+                    <i className="bi bi-geo-alt flex-shrink-0" />
+                  </Link>
                   <div>
                     <h3>Address</h3>
                     <p>Nasr City , Cairo , Egypt</p>
@@ -20,7 +27,9 @@ const Contact = () => {
               </div>
               <div className="col-lg-4">
                 <div className="info-item d-flex align-items-center">
-                  <i className="bi bi-telephone flex-shrink-0" />
+                  <Link to="tel:+201155119930">
+                    <i className="bi bi-telephone flex-shrink-0" />
+                  </Link>
                   <div>
                     <h3>Call</h3>
                     <p>+201155119930</p>
@@ -30,7 +39,9 @@ const Contact = () => {
               {/* End Info Item */}
               <div className="col-lg-4">
                 <div className="info-item d-flex align-items-center">
-                  <i className="bi bi-envelope flex-shrink-0" />
+                  <Link to="mailto:yosifshamy716@gmail.com">
+                    <i className="bi bi-envelope flex-shrink-0" />
+                  </Link>
                   <div>
                     <h3>Email</h3>
                     <p>yosifshamy716@gmail.com</p>

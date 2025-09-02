@@ -13,7 +13,7 @@ import "aos/dist/aos.css";
 
 function App() {
   AOS.init({
-    duration: 500,
+    duration: 200,
     easing: "ease-in-out",
     once: false,
     mirror: false,

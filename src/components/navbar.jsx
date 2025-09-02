@@ -77,7 +77,7 @@ const NavBar = () => {
               </li>
             </ul>
           </Nav>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </div>
       </header>
     </>

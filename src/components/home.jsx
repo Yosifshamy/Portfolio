@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
-      strings: ["Front-End React Developer", "MERN Stack Developer"],
+      strings: ["React Frontend Developer"," Node.js Backend Developer ", "MERN Stack Developer"],
       loop: true,
       typeSpeed: 100,
       backSpeed: 50,

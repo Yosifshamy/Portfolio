@@ -21,6 +21,12 @@ const Footer = () => {
             >
               <i className="bi bi-linkedin" />
             </a>
+            <a href="https://github.com/Yosifshamy" target="_blank">
+              <i className="bi bi-github" />
+            </a>
+            <a href="https://x.com/yosif_elshamy" target="_blank">
+              <i className="bi bi-twitter" />
+            </a>
           </div>
         </div>
       </footer>

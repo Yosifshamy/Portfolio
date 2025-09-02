@@ -13,12 +13,16 @@ const Resume = () => {
                 <h4>Youssef Elshamy</h4>
                 <p>
                   <em>
-                    I am a passionate Front-end Web Developer that completely
-                    understands that my duty is to make a responsive and
-                    user-friendly websites that engage the clients and meet
-                    their expectations . I also have ambition to be a MERN Stack
-                    and I am currently working on because my skills will help me
-                    reach this title soon.
+                    I am a MERN Stack Web Developer with proven experience in
+                    designing, developing, and deploying full-stack web
+                    applications using React.js, Node.js, Express.js, and
+                    MongoDB. Skilled in building responsive UIs, implementing
+                    RESTful APIs, and managing authentication, data security,
+                    and API integration. Adept at applying Agile methodologies,
+                    version control with Git/GitHub, and deploying applications
+                    to cloud platforms. Strong problem-solving and collaboration
+                    skills, with a track record of delivering high- performance,
+                    user-friendly solutions on time.
                   </em>
                 </p>
                 <ul>
@@ -29,7 +33,7 @@ const Resume = () => {
               </div>
               <h3 className="resume-title">Education</h3>
               <div className="resume-item">
-                <h4>business technology</h4>
+                <h4>business information systems</h4>
                 <h5>2021 - 2025</h5>
                 <p>
                   <em>Modern Academy</em>
@@ -39,36 +43,43 @@ const Resume = () => {
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay={200}>
               <h3 className="resume-title">Professional Experience</h3>
               <div className="resume-item">
-                <h4>front-end react developer</h4>
+                <h4>Web Development</h4>
                 <h5>2023 - Present</h5>
                 <p>
                   <em>Freelancing</em>
                 </p>
                 <ul>
                   <li>
-                    Managed my own schedule and workload, allowing for a healthy
-                    work-life balance.
+                    Delivered 10+ responsive websites and web apps for diverse
+                    industries using React, Node.js, and MongoDB.
                   </li>
                   <li>
-                    Worked on projects across various industries, such as
-                    e-commerce, healthcare,and education.
+                    Designed and deployed optimized landing pages, reducing load
+                    times by 30%.
                   </li>
                   <li>
-                    Developed websites, landing pages, and web applications for
-                    clients with different business models.
+                    Built user interfaces tailored to different target
+                    audiences, increasing engagement and usability.
                   </li>
                   <li>
-                    Gained experience in designing responsive and user-friendly
-                    interfaces for different target audiences.
+                    Managed multiple projects simultaneously, meeting tight
+                    deadlines without compromising quality.
+                  </li>
+                </ul>
+              </div>
+              <div className="resume-item">
+                <h4>Digital Banking Intern</h4>
+                <h5>Jul 2022 - Aug 2022</h5>
+                <p>
+                  <em>Export Development Bank of Egypt (EBank)</em>
+                </p>
+                <ul>
+                  <li>
+                    Assisted in developing and testing banking web modules.
                   </li>
                   <li>
-                    Actively listened to client feedback and incorporated
-                    changes to ensure client satisfaction.
-                  </li>
-                  <li>
-                    Overcame technical challenges, such as optimizing website
-                    performance and resolving cross-browser compatibility
-                    issues.
+                    Learned and applied secure development practices in a
+                    professional environment.
                   </li>
                 </ul>
               </div>
