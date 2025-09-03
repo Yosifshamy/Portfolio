@@ -8,7 +8,7 @@ const Portfolio = () => {
       name: "Famdo",
       description: "To-do List Website Project",
       category: "MERN Stack Project",
-      date: "23 August, 2023",
+      date: "23 August, 2025",
       images: [
         "./assets/img/Famdo-1.png",
         "./assets/img/Famdo-2.png",
@@ -35,7 +35,7 @@ const Portfolio = () => {
       name: "halweyat-mama",
       description: "Dashboard Project",
       category: "Web design",
-      date: "09 April, 2023",
+      date: "09 April, 2025",
       images: [
         "./assets/img/halweyat-mama-1.png",
         "./assets/img/halweyat-mama-2.png",
