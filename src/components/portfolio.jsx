@@ -5,6 +5,22 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
+      name: "Tripolar",
+      description: "Event Management Website Project",
+      category: "MERN Stack Project",
+      date: "15 October, 2025",
+      images: [
+        "./assets/img/tripolar-1.png",
+        "./assets/img/tripolar-2.png",
+        "./assets/img/tripolar-3.png",
+        "./assets/img/tripolar-4.png",
+        "./assets/img/tripolar-5.png",
+        "./assets/img/tripolar-6.png",
+      ],
+      live: "https://tripolar.netlify.app/",
+    },
+    {
+      id: 2,
       name: "Famdo",
       description: "To-do List Website Project",
       category: "MERN Stack Project",
@@ -18,7 +34,7 @@ const Portfolio = () => {
       live: "https://famdo.netlify.app/",
     },
     {
-      id: 2,
+      id: 3,
       name: "CineMirage",
       description: "Movie Recommendation Project",
       category: "Mern Stack Project",
@@ -31,7 +47,7 @@ const Portfolio = () => {
       live: "https://mahmoudsaad1307.github.io/DEPI-MoviesApp/",
     },
     {
-      id: 3,
+      id: 4,
       name: "halweyat-mama",
       description: "Dashboard Project",
       category: "Web design",
