@@ -47,7 +47,7 @@ const Home = () => {
             <div className="stat-label">rows analyzed</div>
           </div>
           <div className="stat-card dark">
-            <div className="stat-num">Microsoft Certified</div>
+            <div className="stat-num cert">Microsoft Certified</div>
             <div className="stat-label">In progress</div>
           </div>
         </div>
@@ -57,8 +57,8 @@ const Home = () => {
             <div className="stat-label">tools mastered</div>
           </div>
           <div className="stat-card dark">
-            <div className="stat-num">Google Certified</div>
-            <div className="stat-label"></div>
+            <div className="stat-num cert">Google Certified</div>
+            <div className="stat-label">Completed</div>
           </div>
         </div>
         <div className="tools-card">

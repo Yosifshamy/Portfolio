@@ -232,6 +232,12 @@ body {
   margin-bottom: 0.4rem;
   color: var(--ink);
 }
+
+.cert{
+  font-size: 1.6rem;
+  color: var(--accent);
+  font-weight: 500;
+}
 .stat-label {
   font-size: 11px;
   color: var(--ink3);
