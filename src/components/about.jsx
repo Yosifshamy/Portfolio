@@ -2,8 +2,8 @@ const About = () => {
   const analyticsSkills = [
     { label: "SQL", width: "85%", cls: "" },
     { label: "Tableau", width: "75%", cls: "" },
-    { label: "Excel", width: "80%", cls: "" },
-    { label: "Python", width: "55%", cls: "" },
+    { label: "Excel", width: "85%", cls: "" },
+    { label: "Python", width: "70%", cls: "" },
   ];
 
   const devSkills = [
@@ -23,8 +23,8 @@ const About = () => {
         {/* LEFT — text */}
         <div className="about-text reveal">
           <p>
-            I'm a <strong>Data Analyst in training</strong>, currently completing
-            the Google Data Analytics Professional Certificate (7 of 9 courses
+            I'm a <strong>Data Analyst in training</strong>, Finished
+            the Google Data Analytics Professional Certificate (9 of 9 courses
             done). Before pivoting to analytics, I spent years as a{" "}
             <strong>MERN Stack Developer</strong> — building full-stack web
             applications with React, Node.js, and MongoDB.
@@ -96,7 +96,16 @@ const About = () => {
               <div>
                 <div className="cert-title">Google Data Analytics</div>
                 <div className="cert-sub">
-                  Professional Certificate · In progress (7/9)
+                  Professional Certificate · Completed (9/9)
+                </div>
+              </div>
+            </div>
+            <div className="cert-item">
+              <span className="cert-emoji">🎓</span>
+              <div>
+                <div className="cert-title">Microsoft Certified</div>
+                <div className="cert-sub">
+                  Power BI Data Analyst Associate · In progress
                 </div>
               </div>
             </div>

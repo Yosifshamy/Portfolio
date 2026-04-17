@@ -162,7 +162,7 @@ const Portfolio = () => {
             different domain, tool set, and type of business question.
           </p>
           <div className="project-tags">
-            <span className="tag">R</span>
+            <span className="tag">Python</span>
             <span className="tag">Power BI</span>
             <span className="tag">PostgreSQL</span>
           </div>

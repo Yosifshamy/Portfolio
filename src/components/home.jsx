@@ -8,9 +8,9 @@ const Home = () => {
     const typed = new Typed(typedRef.current, {
       strings: ["Data Analyst", "Insight Storyteller", "MERN Stack Developer"],
       loop: true,
-      typeSpeed: 80,
+      typeSpeed: 100,
       backSpeed: 40,
-      backDelay: 2200,
+      backDelay: 3000,
     });
     return () => typed.destroy();
   }, []);
@@ -42,23 +42,23 @@ const Home = () => {
       {/* RIGHT */}
       <div className="hero-right">
         <div className="stat-row">
-          <div className="stat-card dark">
+          <div className="stat-card">
             <div className="stat-num">128K</div>
             <div className="stat-label">rows analyzed</div>
           </div>
-          <div className="stat-card">
-            <div className="stat-num">₹7Cr</div>
-            <div className="stat-label">revenue uncovered</div>
+          <div className="stat-card dark">
+            <div className="stat-num">Microsoft Certified</div>
+            <div className="stat-label">In progress</div>
           </div>
         </div>
         <div className="stat-row">
           <div className="stat-card">
-            <div className="stat-num">5</div>
+            <div className="stat-num">6</div>
             <div className="stat-label">tools mastered</div>
           </div>
-          <div className="stat-card">
-            <div className="stat-num">7/9</div>
-            <div className="stat-label">Google cert courses</div>
+          <div className="stat-card dark">
+            <div className="stat-num">Google Certified</div>
+            <div className="stat-label"></div>
           </div>
         </div>
         <div className="tools-card">
@@ -67,8 +67,9 @@ const Home = () => {
             <span className="tool-chip hi">Python</span>
             <span className="tool-chip hi">SQL / MySQL</span>
             <span className="tool-chip hi">Tableau</span>
-            <span className="tool-chip">Excel</span>
-            <span className="tool-chip">Pandas</span>
+            <span className="tool-chip hi">Excel</span>
+            <span className="tool-chip hi">Pandas</span>
+            <span className="tool-chip hi">Power BI</span>
             <span className="tool-chip">React</span>
             <span className="tool-chip">Node.js</span>
           </div>
