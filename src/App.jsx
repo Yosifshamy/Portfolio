@@ -26,7 +26,7 @@ function App() {
     );
     reveals.forEach((el) => observer.observe(el));
 
-    // Skill bar animation
+    // Skill bar animation - use intersection observer to trigger immediate animation
     const skillBars = document.querySelectorAll(".skill-bar-fill");
     const barObserver = new IntersectionObserver(
       (entries) => {
@@ -37,16 +37,9 @@ function App() {
           }
         });
       },
-      { threshold: 0 },
+      { threshold: 0, rootMargin: "100px" },
     );
-    skillBars.forEach((bar) => {
-      barObserver.observe(bar);
-      // Fallback for bars that might already be in view
-      if (bar.getBoundingClientRect().top < window.innerHeight) {
-        bar.classList.add("animated");
-        barObserver.unobserve(bar);
-      }
-    });
+    skillBars.forEach((bar) => barObserver.observe(bar));
 
     return () => {
       observer.disconnect();
