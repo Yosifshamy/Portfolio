@@ -2,12 +2,12 @@ import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 const Portfolio = () => {
-  const projects = [
+  const mernProjects = [
     {
       id: 1,
       name: "Tripolar",
-      description: "Event Management Website Project",
-      category: "MERN Stack Project",
+      description: "Event Management Website",
+      category: "MERN Stack",
       date: "15 October, 2025",
       images: [
         "./assets/img/tripolar-1.png",
@@ -22,8 +22,8 @@ const Portfolio = () => {
     {
       id: 2,
       name: "Famdo",
-      description: "To-do List Website Project",
-      category: "MERN Stack Project",
+      description: "To-do List Application",
+      category: "MERN Stack",
       date: "23 August, 2025",
       images: [
         "./assets/img/Famdo-1.png",
@@ -36,8 +36,8 @@ const Portfolio = () => {
     {
       id: 3,
       name: "CineMirage",
-      description: "Movie Recommendation Project",
-      category: "Mern Stack Project",
+      description: "Movie Recommendation App",
+      category: "MERN Stack",
       date: "16 May, 2025",
       images: [
         "./assets/img/CineMirage-1.png",
@@ -48,9 +48,9 @@ const Portfolio = () => {
     },
     {
       id: 4,
-      name: "halweyat-mama",
-      description: "Dashboard Project",
-      category: "Web design",
+      name: "Halweyat Mama",
+      description: "Restaurant Dashboard",
+      category: "Web Design",
       date: "09 April, 2025",
       images: [
         "./assets/img/halweyat-mama-1.png",
@@ -62,111 +62,198 @@ const Portfolio = () => {
   ];
 
   const [selectedProject, setSelectedProject] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProject(null);
-  };
+  const openModal = (project) => setSelectedProject(project);
+  const closeModal = () => setSelectedProject(null);
 
   return (
-    <>
-      <section id="portfolio" className="portfolio section">
-        <div className="container section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
-        </div>
-        <div className="container">
-          {/* Portfolio Grid */}
-          <div className="row gy-4" data-aos="fade-up" data-aos-delay={200}>
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="col-lg-6 col-md-6 portfolio-item"
-              >
-                <div
-                  className="portfolio-card"
-                  onClick={() => openModal(project)}
-                >
-                  <img
-                    src={project.images[0]}
-                    className="img-fluid"
-                    alt={project.name}
-                  />
-                  <div className="portfolio-overlay">
-                    <h4>{project.name}</h4>
-                    <p>{project.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+    <section id="portfolio" className="portfolio section">
+      <div className="section-title-block reveal">
+        <span className="section-num">02</span>
+        <h2>Projects</h2>
+      </div>
+
+      {/* ── ANALYTICS PROJECTS ── */}
+      <div className="projects-grid">
+        {/* Featured */}
+        <div className="project-card featured reveal">
+          <div>
+            <div className="project-num">001 · FEATURED PROJECT</div>
+            <h3 className="project-title">
+              Amazon India Fashion Sales Analysis
+            </h3>
+            <p className="project-desc">
+              End-to-end analysis of 128,976 orders from a real Indian fashion
+              e-commerce brand. Cleaned raw data in Excel, wrote 5 SQL queries
+              in MySQL, and built an interactive Tableau dashboard revealing
+              ₹7Cr+ in revenue insights across products, states, and order
+              trends.
+            </p>
+            <div className="project-tags">
+              <span className="tag">Excel</span>
+              <span className="tag">MySQL</span>
+              <span className="tag">Tableau</span>
+              <span className="tag">E-commerce</span>
+              <span className="tag">128K rows</span>
+            </div>
+            <a
+              href="https://public.tableau.com/views/AmazonIndiaFashionSalesAnalysis/AmazonSalesDashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              View live dashboard →
+            </a>
+          </div>
+          <div className="project-findings">
+            <div className="finding">
+              <div className="finding-num">INSIGHT 01</div>
+              <p>
+                Sets dominate revenue at ₹3.5Cr with the highest avg order
+                value of ₹854 — nearly double Kurtas
+              </p>
+            </div>
+            <div className="finding">
+              <div className="finding-num">INSIGHT 02</div>
+              <p>
+                Maharashtra, Karnataka &amp; Telangana account for ~40% of
+                total revenue — prime markets for focused investment
+              </p>
+            </div>
+            <div className="finding">
+              <div className="finding-num">INSIGHT 03</div>
+              <p>
+                14% cancellation rate across all categories signals a systemic
+                sizing or delivery issue worth investigating
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Modal */}
-        {isModalOpen && selectedProject && (
-          <div className="modal-overlay" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <button className="modal-close" onClick={closeModal}>
-                <i className="bi bi-x"></i>
-              </button>
+        {/* Coming soon 1 */}
+        <div className="project-card reveal">
+          <div className="project-num">002 · IN PROGRESS</div>
+          <h3 className="project-title">
+            Fitbit Health &amp; Fitness Trends Analysis
+          </h3>
+          <p className="project-desc">
+            Analyzing 30-user Fitbit tracker data to uncover activity patterns,
+            sleep behavior, and step goal achievement. Full Python analysis with
+            Pandas, Matplotlib &amp; Seaborn.
+          </p>
+          <div className="project-tags">
+            <span className="tag">Python</span>
+            <span className="tag">Pandas</span>
+            <span className="tag">Seaborn</span>
+            <span className="tag">Jupyter</span>
+          </div>
+          <div className="coming-soon">
+            <div className="coming-soon-icon">⌛</div>
+            <p>COMING SOON</p>
+          </div>
+        </div>
 
-              <div className="modal-body">
-                <div className="row justify-content-between gy-4">
-                  <div className="col-lg-8">
-                    <Carousel className="portfolio-details-slider">
-                      {selectedProject.images.map((image, index) => (
-                        <Carousel.Item key={index} interval={3000}>
-                          <img
-                            src={image}
-                            alt={`${selectedProject.name} ${index + 1}`}
-                            className="d-block w-100"
-                          />
-                        </Carousel.Item>
-                      ))}
-                    </Carousel>
-                    <div className="portfolio-description mt-4">
-                      <h2>{selectedProject.name}</h2>
-                      <p>{selectedProject.description}</p>
-                    </div>
+        {/* Coming soon 2 */}
+        <div className="project-card reveal">
+          <div className="project-num">003 · PLANNED</div>
+          <h3 className="project-title">More projects on the way</h3>
+          <p className="project-desc">
+            Actively building my analytics portfolio. Each project covers a
+            different domain, tool set, and type of business question.
+          </p>
+          <div className="project-tags">
+            <span className="tag">R</span>
+            <span className="tag">Power BI</span>
+            <span className="tag">PostgreSQL</span>
+          </div>
+          <div className="coming-soon">
+            <div className="coming-soon-icon">🔭</div>
+            <p>WATCH THIS SPACE</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── MERN PROJECTS ── */}
+      <div className="mern-section reveal">
+        <div className="mern-label">Previous work · MERN Stack Development</div>
+        <div className="mern-grid">
+          {mernProjects.map((project) => (
+            <div
+              key={project.id}
+              className="mern-card"
+              onClick={() => openModal(project)}
+            >
+              <img src={project.images[0]} alt={project.name} />
+              <div className="mern-overlay">
+                <h4>{project.name}</h4>
+                <p>{project.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── MODAL ── */}
+      {selectedProject && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <i className="bi bi-x" />
+            </button>
+            <div className="modal-body">
+              <div className="row justify-content-between gy-4">
+                <div className="col-lg-8">
+                  <Carousel className="portfolio-details-slider">
+                    {selectedProject.images.map((img, i) => (
+                      <Carousel.Item key={i} interval={3000}>
+                        <img
+                          src={img}
+                          alt={`${selectedProject.name} ${i + 1}`}
+                          className="d-block w-100"
+                        />
+                      </Carousel.Item>
+                    ))}
+                  </Carousel>
+                  <div className="mt-4">
+                    <h2 className="modal-project-title">
+                      {selectedProject.name}
+                    </h2>
+                    <p className="modal-project-desc">
+                      {selectedProject.description}
+                    </p>
                   </div>
-                  <div className="col-lg-4">
-                    <div className="portfolio-info">
-                      <h3>Project Information</h3>
-                      <ul>
-                        <li>
-                          <strong>Category:</strong> {selectedProject.category}
-                        </li>
-                        <li>
-                          <strong>Project Date:</strong> {selectedProject.date}
-                        </li>
-                        <li>
-                          <strong>Project Name:</strong> {selectedProject.name}
-                        </li>
-                        <li>
-                          <strong>Live Demo:</strong>{" "}
-                          <a
-                            href={selectedProject.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Click here
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                </div>
+                <div className="col-lg-4">
+                  <div className="portfolio-info">
+                    <h3>Project info</h3>
+                    <ul>
+                      <li>
+                        <strong>Category</strong>
+                        {selectedProject.category}
+                      </li>
+                      <li>
+                        <strong>Date</strong>
+                        {selectedProject.date}
+                      </li>
+                      <li>
+                        <strong>Live demo</strong>
+                        <a
+                          href={selectedProject.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Open project →
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        )}
-      </section>
-    </>
+        </div>
+      )}
+    </section>
   );
 };
 

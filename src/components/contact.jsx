@@ -1,110 +1,49 @@
-import { Link } from "react-router";
-
 const Contact = () => {
   return (
-    <>
-      <section id="contact" className="contact section">
-        <div className="container section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>Get in touch</p>
-        </div>
-        <div className="container" data-aos="fade-up" data-aos-delay={100}>
-          <div className="info-wrap" data-aos="fade-up" data-aos-delay={200}>
-            <div className="row gy-5">
-              <div className="col-lg-4">
-                <div className="info-item d-flex align-items-center">
-                  <Link
-                    to="https://maps.app.goo.gl/4xL5LvrSRPqUSAvj9"
-                    target="_blank"
-                  >
-                    <i className="bi bi-geo-alt flex-shrink-0" />
-                  </Link>
-                  <div>
-                    <h3>Address</h3>
-                    <p>Nasr City , Cairo , Egypt</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="info-item d-flex align-items-center">
-                  <Link to="tel:+201155119930">
-                    <i className="bi bi-telephone flex-shrink-0" />
-                  </Link>
-                  <div>
-                    <h3>Call</h3>
-                    <p>+201155119930</p>
-                  </div>
-                </div>
-              </div>
-              {/* End Info Item */}
-              <div className="col-lg-4">
-                <div className="info-item d-flex align-items-center">
-                  <Link to="mailto:yosifshamy716@gmail.com">
-                    <i className="bi bi-envelope flex-shrink-0" />
-                  </Link>
-                  <div>
-                    <h3>Email</h3>
-                    <p>yosifshamy716@gmail.com</p>
-                  </div>
-                </div>
-              </div>
-              {/* End Info Item */}
-            </div>
-          </div>
-          <form
-            action="forms/contact.php"
-            method="post"
-            className="php-email-form"
-            data-aos="fade-up"
-            data-aos-delay={300}
-          >
-            <div className="row gy-4">
-              <div className="col-md-6">
-                <input
-                  type="text"
-                  name="name"
-                  className="form-control"
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
-              <div className="col-md-6 ">
-                <input
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                />
-              </div>
-              <div className="col-md-12">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="subject"
-                  placeholder="Subject"
-                  required
-                />
-              </div>
-              <div className="col-md-12">
-                <textarea
-                  className="form-control"
-                  name="message"
-                  rows={6}
-                  placeholder="Message"
-                  required
-                  defaultValue={""}
-                />
-              </div>
-              <div className="col-md-12 text-center">
-                <button type="submit">Send Message</button>
-              </div>
-            </div>
-          </form>
-          {/* End Contact Form */}
-        </div>
-      </section>
-    </>
+    <section id="contact" className="contact section">
+      <div className="section-title-block">
+        <span className="section-num">04</span>
+        <h2>Let's work together</h2>
+      </div>
+
+      <p className="contact-sub">
+        I'm actively looking for data analyst roles and freelance projects. If
+        you have data that needs making sense of, let's talk.
+      </p>
+
+      <div className="contact-links">
+        <a href="mailto:yosifshamy716@gmail.com" className="contact-link">
+          ✉ yosifshamy716@gmail.com
+        </a>
+        <a
+          href="https://www.linkedin.com/in/youssef-elshamy-135906276/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-link"
+        >
+          in LinkedIn
+        </a>
+        <a
+          href="https://github.com/Yosifshamy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-link"
+        >
+          ⌥ GitHub
+        </a>
+        <a
+          href="https://public.tableau.com/app/profile/youssef.elshamy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-link"
+        >
+          ◈ Tableau Public
+        </a>
+        <a href="tel:+201155119930" className="contact-link">
+          ✆ +20 115 511 9930
+        </a>
+      </div>
+    </section>
   );
 };
 
