@@ -22,7 +22,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     reveals.forEach((el) => observer.observe(el));
 
@@ -37,9 +37,16 @@ function App() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0 },
     );
-    skillBars.forEach((bar) => barObserver.observe(bar));
+    skillBars.forEach((bar) => {
+      barObserver.observe(bar);
+      // Fallback for bars that might already be in view
+      if (bar.getBoundingClientRect().top < window.innerHeight) {
+        bar.classList.add("animated");
+        barObserver.unobserve(bar);
+      }
+    });
 
     return () => {
       observer.disconnect();
