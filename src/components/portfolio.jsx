@@ -130,27 +130,38 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Coming soon 1 */}
+        {/* Project 002 - Fitbit LIVE */}
         <div className="project-card reveal">
-          <div className="project-num">002 · IN PROGRESS</div>
+          <div className="project-num">002 · COMPLETED PROJECT</div>
           <h3 className="project-title">
             Fitbit Health &amp; Fitness Trends Analysis
           </h3>
           <p className="project-desc">
-            Analyzing 30-user Fitbit tracker data to uncover activity patterns,
-            sleep behavior, and step goal achievement. Full Python analysis with
-            Pandas, Matplotlib &amp; Seaborn.
+            Analyzed 940 daily records from 30 Fitbit users to uncover activity
+            patterns, sleep behavior, and step goal achievement. Full Python
+            analysis with Pandas, Matplotlib &amp; Seaborn — includes 6 charts
+            and actionable fitness app recommendations.
           </p>
           <div className="project-tags">
             <span className="tag">Python</span>
             <span className="tag">Pandas</span>
             <span className="tag">Seaborn</span>
             <span className="tag">Jupyter</span>
+            <span className="tag">940 rows</span>
           </div>
-          <div className="coming-soon">
-            <div className="coming-soon-icon">⌛</div>
-            <p>COMING SOON</p>
+          <div className="project-findings-sm">
+            <div className="finding-sm">Only <strong>32.2%</strong> of days users hit the 10K step goal</div>
+            <div className="finding-sm">Users spend <strong>81.3%</strong> of their day sedentary</div>
+            <div className="finding-sm">Sedentary time &amp; sleep: strong <strong>-0.60</strong> correlation</div>
           </div>
+          <a
+            href="https://github.com/Yosifshamy/fitbit-fitness-analysis"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View on GitHub →
+          </a>
         </div>
 
         {/* Coming soon 2 */}
