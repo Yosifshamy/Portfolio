@@ -21,8 +21,10 @@ const Home = () => {
       <div className="hero-left">
         <p className="hero-tag">Available for opportunities · Cairo, Egypt</p>
         <h1 className="hero-name">
-          Data<br />
-          <em>Analyst</em><br />
+          Data
+          <br />
+          <em>Analyst</em>
+          <br />
           &amp; Developer
         </h1>
         <div className="hero-typed-wrap">
@@ -34,8 +36,19 @@ const Home = () => {
           experiences that most analysts simply can't.
         </p>
         <div className="hero-cta">
-          <a href="#portfolio" className="btn-primary-custom">View my work →</a>
-          <a href="#contact" className="btn-outline-custom">Get in touch</a>
+          <a href="#portfolio" className="btn-primary-custom">
+            View my work →
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1CDWBJA9TVZrR2eQfrYKwJqn9JA-XGHQF/view?usp=drive_link"
+            className="btn-primary-custom"
+            target="_blank"
+          >
+            View my CV →
+          </a>
+          <a href="#contact" className="btn-outline-custom">
+            Get in touch
+          </a>
         </div>
       </div>
 
@@ -58,7 +71,15 @@ const Home = () => {
           </div>
           <div className="stat-card dark">
             <div className="stat-num cert">Google Certified</div>
-            <div className="stat-label">Completed</div>
+            <div className="stat-label">
+              <a
+                className="stat-label"
+                href="https://drive.google.com/file/d/1UGjq_Sf2Bgsu3ML5_znR-EddaeTYBpOf/view?usp=drive_link"
+                target="_blank"
+              >
+                Preview →
+              </a>
+            </div>
           </div>
         </div>
         <div className="tools-card">
