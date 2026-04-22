@@ -6,7 +6,7 @@ const Home = () => {
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
-      strings: ["Data Analyst", "Insight Storyteller", "MERN Stack Developer"],
+      strings: ["Data Analyst", "Insight Storyteller", "Full Stack Developer"],
       loop: true,
       typeSpeed: 100,
       backSpeed: 40,
