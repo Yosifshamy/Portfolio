@@ -56,7 +56,7 @@ const Home = () => {
       <div className="hero-right">
         <div className="stat-row">
           <div className="stat-card">
-            <div className="stat-num">128K</div>
+            <div className="stat-num cert">128K</div>
             <div className="stat-label">rows analyzed</div>
           </div>
           <div className="stat-card dark">
@@ -66,7 +66,7 @@ const Home = () => {
         </div>
         <div className="stat-row">
           <div className="stat-card">
-            <div className="stat-num">6</div>
+            <div className="stat-num cert">6</div>
             <div className="stat-label">tools mastered</div>
           </div>
           <div className="stat-card dark">
