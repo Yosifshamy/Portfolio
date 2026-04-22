@@ -109,15 +109,15 @@ const Portfolio = () => {
             <div className="finding">
               <div className="finding-num">INSIGHT 01</div>
               <p>
-                Sets dominate revenue at ₹3.5Cr with the highest avg order
-                value of ₹854 — nearly double Kurtas
+                Sets dominate revenue at ₹3.5Cr with the highest avg order value
+                of ₹854 — nearly double Kurtas
               </p>
             </div>
             <div className="finding">
               <div className="finding-num">INSIGHT 02</div>
               <p>
-                Maharashtra, Karnataka &amp; Telangana account for ~40% of
-                total revenue — prime markets for focused investment
+                Maharashtra, Karnataka &amp; Telangana account for ~40% of total
+                revenue — prime markets for focused investment
               </p>
             </div>
             <div className="finding">
@@ -131,6 +131,48 @@ const Portfolio = () => {
         </div>
 
         {/* Project 002 - Fitbit LIVE */}
+        <div className="project-card reveal">
+          <div className="project-num">003 COMPLETED</div>
+          <h3 className="project-title">
+            Telecom Customer Churn Analysis (Power BI)
+          </h3>
+          <p className="project-desc">
+            Built an end-to-end churn analysis dashboard on 7K+ telecom
+            customers. Cleaned the data in Power Query, created DAX measures for
+            churn KPIs, and designed an interactive Power BI report to reveal
+            which customer segments churn the most and why.
+          </p>
+          <div className="project-tags">
+            <span className="tag">Power BI</span>
+            <span className="tag">DAX</span>
+            <span className="tag">Power Query</span>
+            <span className="tag">Churn Analysis</span>
+          </div>
+          <div className="project-findings-sm">
+            <div className="finding-sm">
+              Churn rate tracked via{" "}
+              <strong>Churned Customers / Total Customers</strong>
+            </div>
+            <div className="finding-sm">
+              Highlighted high-risk segments by <strong>Contract</strong> and{" "}
+              <strong>Tenure Band</strong>
+            </div>
+            <div className="finding-sm">
+              Exposed top churn reasons such as <strong>Price</strong> and{" "}
+              <strong>Competitor</strong>
+            </div>
+          </div>
+          <a
+            href="https://github.com/Yosifshamy/Telecom-Customer-Churn-PowerBI"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View on GitHub →
+          </a>
+        </div>
+
+        {/* Project 003 - Telecom Churn - Power BI */}
         <div className="project-card reveal">
           <div className="project-num">002 · COMPLETED PROJECT</div>
           <h3 className="project-title">
@@ -150,9 +192,16 @@ const Portfolio = () => {
             <span className="tag">940 rows</span>
           </div>
           <div className="project-findings-sm">
-            <div className="finding-sm">Only <strong>32.2%</strong> of days users hit the 10K step goal</div>
-            <div className="finding-sm">Users spend <strong>81.3%</strong> of their day sedentary</div>
-            <div className="finding-sm">Sedentary time &amp; sleep: strong <strong>-0.60</strong> correlation</div>
+            <div className="finding-sm">
+              Only <strong>32.2%</strong> of days users hit the 10K step goal
+            </div>
+            <div className="finding-sm">
+              Users spend <strong>81.3%</strong> of their day sedentary
+            </div>
+            <div className="finding-sm">
+              Sedentary time &amp; sleep: strong <strong>-0.60</strong>{" "}
+              correlation
+            </div>
           </div>
           <a
             href="https://github.com/Yosifshamy/fitbit-fitness-analysis"
@@ -162,25 +211,6 @@ const Portfolio = () => {
           >
             View on GitHub →
           </a>
-        </div>
-
-        {/* Coming soon 2 */}
-        <div className="project-card reveal">
-          <div className="project-num">003 · PLANNED</div>
-          <h3 className="project-title">More projects on the way</h3>
-          <p className="project-desc">
-            Actively building my analytics portfolio. Each project covers a
-            different domain, tool set, and type of business question.
-          </p>
-          <div className="project-tags">
-            <span className="tag">Python</span>
-            <span className="tag">Power BI</span>
-            <span className="tag">PostgreSQL</span>
-          </div>
-          <div className="coming-soon">
-            <div className="coming-soon-icon">🔭</div>
-            <p>WATCH THIS SPACE</p>
-          </div>
         </div>
       </div>
 
