@@ -140,7 +140,7 @@ body::before {
 
   .navmenu {
     position: fixed;
-    height: calc(40vh - 64px);
+    height: calc(45vh - 64px);
     top: 64px; left: 0; right: 0; bottom: 0;
     background: var(--bg);
     padding: 2rem;
