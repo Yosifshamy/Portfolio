@@ -20,20 +20,6 @@ const Portfolio = () => {
       live: "https://tripolar.netlify.app/",
     },
     {
-      id: 2,
-      name: "Famdo",
-      description: "To-do List Application",
-      category: "MERN Stack",
-      date: "23 August, 2025",
-      images: [
-        "./assets/img/Famdo-1.png",
-        "./assets/img/Famdo-2.png",
-        "./assets/img/Famdo-3.png",
-        "./assets/img/Famdo-4.png",
-      ],
-      live: "https://famdo.netlify.app/",
-    },
-    {
       id: 3,
       name: "CineMirage",
       description: "Movie Recommendation App",
@@ -45,19 +31,6 @@ const Portfolio = () => {
         "./assets/img/CineMirage-3.png",
       ],
       live: "https://mahmoudsaad1307.github.io/DEPI-MoviesApp/",
-    },
-    {
-      id: 4,
-      name: "Halweyat Mama",
-      description: "Restaurant Dashboard",
-      category: "Web Design",
-      date: "09 April, 2025",
-      images: [
-        "./assets/img/halweyat-mama-1.png",
-        "./assets/img/halweyat-mama-2.png",
-        "./assets/img/halweyat-mama-3.png",
-      ],
-      live: "https://halweyat-mama.netlify.app/",
     },
   ];
 
@@ -216,7 +189,7 @@ const Portfolio = () => {
 
       {/* ── MERN PROJECTS ── */}
       <div className="mern-section reveal">
-        <div className="mern-label">Previous work · MERN Stack Development</div>
+        <div className="mern-label">Previous work · Full Stack Development</div>
         <div className="mern-grid">
           {mernProjects.map((project) => (
             <div
