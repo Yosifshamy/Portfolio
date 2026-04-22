@@ -32,7 +32,7 @@ const Home = () => {
         </div>
         <p className="hero-desc">
           I turn raw, messy data into <strong>clear business decisions</strong>.
-          With a background in MERN stack development, I build analytics
+          With a background in Web development, I build analytics
           experiences that most analysts simply can't.
         </p>
         <div className="hero-cta">

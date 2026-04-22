@@ -210,7 +210,7 @@ body::before {
 
 .hero-name {
   font-family: var(--display);
-  font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+  font-size: clamp(1.7rem, 4.5vw, 5.2rem);
   font-weight: 800;
   line-height: 1.0;
   color: var(--text);
