@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer id="footer" className="footer">
-      <p>© 2025 Youssef El Shamy · Data Analyst &amp; Developer · Cairo, Egypt</p>
+      <p>© 2025 Youssef El Shamy · Data Analyst · Cairo, Egypt</p>
       <div className="social-links">
         <a href="https://www.linkedin.com/in/youssef-elshamy-135906276/" target="_blank" rel="noopener noreferrer">
           <i className="bi bi-linkedin" />

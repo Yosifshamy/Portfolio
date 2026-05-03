@@ -1,14 +1,15 @@
 const About = () => {
   const analyticsSkills = [
-    { label: "SQL", width: "85%", cls: "" },
-    { label: "Tableau", width: "75%", cls: "" },
-    { label: "Excel", width: "85%", cls: "" },
-    { label: "Python", width: "70%", cls: "" },
+    { label: "SQL", width: "90%", cls: "" },
+    { label: "Tableau", width: "85%", cls: "" },
+    { label: "Excel", width: "90%", cls: "" },
+    { label: "Python", width: "85%", cls: "" },
+    { label: "Power BI", width: "80%", cls: "" },
   ];
 
   const devSkills = [
-    { label: "React", width: "90%", cls: "green" },
-    { label: "Node.js", width: "85%", cls: "green" },
+    { label: "React", width: "80%", cls: "green" },
+    { label: "Node.js", width: "75%", cls: "green" },
     { label: "MongoDB", width: "80%", cls: "green" },
   ];
 
@@ -23,32 +24,34 @@ const About = () => {
         {/* LEFT — text */}
         <div className="about-text reveal">
           <p>
-            I'm a <strong>Data Analyst in training</strong>, Finished
-            the Google Data Analytics Professional Certificate (9 of 9 courses
-            done). Before pivoting to analytics, I spent years as a{" "}
-            <strong>MERN Stack Developer</strong> — building full-stack web
-            applications with React, Node.js, and MongoDB.
+            I'm a <strong>Data Analyst</strong> with a Google Data Analytics
+            Professional Certificate and three end-to-end projects spanning
+            e-commerce, fitness tracking, and telecom churn. I work across the
+            full analytics pipeline — from raw data cleaning to SQL querying,
+            Python EDA, and interactive dashboards in Tableau and Power BI.
           </p>
           <p>
-            That developer background is not a detour. It's a{" "}
-            <strong>superpower</strong>. While most analysts can find insights, I
-            can also build the interactive tools that bring those insights to
-            life for stakeholders.
+            Before pivoting to analytics, I spent a year as a{" "}
+            <strong>Full Stack Developer</strong> building applications with
+            React, Node.js, and MongoDB. That background is not a detour — it's
+            a <strong>superpower</strong>. I understand data pipelines, can
+            build my own portfolio tools, and bring an engineer's precision to
+            every analysis.
           </p>
           <p>
-            I'm based in <strong>Cairo, Egypt</strong> and open to remote
-            opportunities worldwide. I'm passionate about e-commerce, business
-            intelligence, and using data to help companies make smarter
-            decisions.
+            Based in <strong>Cairo, Egypt</strong> and open to remote
+            opportunities worldwide. Passionate about e-commerce intelligence,
+            business analytics, and translating numbers into decisions that
+            actually get made.
           </p>
 
           <div className="superpower-box">
             <h4>The analyst + developer edge</h4>
             <p>
-              I don't just publish dashboards to Tableau Public — I embed them
-              inside custom-built portfolio pages with case study narratives.
-              That combination of analytical thinking and technical execution is
-              rare, and it shows in my work.
+              I don't just publish dashboards — I embed them inside
+              custom-built portfolio pages with full case study narratives. That
+              combination of analytical thinking and technical execution is rare,
+              and it shows in my work.
             </p>
           </div>
         </div>
@@ -96,14 +99,14 @@ const About = () => {
               <div>
                 <div className="cert-title">Google Data Analytics</div>
                 <div className="cert-sub">
-                  Professional Certificate · Completed (9/9)
+                  Professional Certificate · Completed
                 </div>
               </div>
             </div>
             <div className="cert-item">
-              <span className="cert-emoji">🎓</span>
+              <span className="cert-emoji">📊</span>
               <div>
-                <div className="cert-title">Microsoft Certified</div>
+                <div className="cert-title">Microsoft PL-300</div>
                 <div className="cert-sub">
                   Power BI Data Analyst Associate · In progress
                 </div>

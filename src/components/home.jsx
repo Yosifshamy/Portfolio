@@ -6,7 +6,7 @@ const Home = () => {
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
-      strings: ["Data Analyst", "Insight Storyteller", "Full Stack Developer"],
+      strings: ["Data Analyst", "Business Analyst", "Insight Storyteller"],
       loop: true,
       typeSpeed: 100,
       backSpeed: 40,
@@ -21,19 +21,17 @@ const Home = () => {
       <div className="hero-left">
         <p className="hero-tag">Available for opportunities · Cairo, Egypt</p>
         <h1 className="hero-name">
-          Data
+          Youssef
           <br />
-          <em>Analyst</em>
-          <br />
-          &amp; Developer
+          <em>Elshamy</em>
         </h1>
         <div className="hero-typed-wrap">
           <span ref={typedRef} />
         </div>
         <p className="hero-desc">
           I turn raw, messy data into <strong>clear business decisions</strong>.
-          With a background in Web development, I build analytics
-          experiences that most analysts simply can't.
+          With a background in web development, I build analytics experiences
+          that most analysts simply can't.
         </p>
         <div className="hero-cta">
           <a href="#portfolio" className="btn-primary-custom">
@@ -43,6 +41,7 @@ const Home = () => {
             href="https://drive.google.com/file/d/1CDWBJA9TVZrR2eQfrYKwJqn9JA-XGHQF/view?usp=drive_link"
             className="btn-primary-custom"
             target="_blank"
+            rel="noopener noreferrer"
           >
             View my CV →
           </a>
@@ -56,18 +55,18 @@ const Home = () => {
       <div className="hero-right">
         <div className="stat-row">
           <div className="stat-card">
-            <div className="stat-num cert">128K</div>
+            <div className="stat-num cert">135K+</div>
             <div className="stat-label">rows analyzed</div>
           </div>
           <div className="stat-card dark">
             <div className="stat-num cert">Microsoft Certified</div>
-            <div className="stat-label">In progress</div>
+            <div className="stat-label">In progress · PL-300</div>
           </div>
         </div>
         <div className="stat-row">
           <div className="stat-card">
-            <div className="stat-num cert">6</div>
-            <div className="stat-label">tools mastered</div>
+            <div className="stat-num cert">3</div>
+            <div className="stat-label">end-to-end projects</div>
           </div>
           <div className="stat-card dark">
             <div className="stat-num cert">Google Certified</div>
@@ -76,6 +75,7 @@ const Home = () => {
                 className="stat-label"
                 href="https://drive.google.com/file/d/1UGjq_Sf2Bgsu3ML5_znR-EddaeTYBpOf/view?usp=drive_link"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Preview →
               </a>
@@ -83,16 +83,18 @@ const Home = () => {
           </div>
         </div>
         <div className="tools-card">
-          <div className="tools-title">Current stack</div>
+          <div className="tools-title">Analytics stack</div>
           <div className="tools-list">
-            <span className="tool-chip hi">Python</span>
             <span className="tool-chip hi">SQL / MySQL</span>
             <span className="tool-chip hi">Tableau</span>
-            <span className="tool-chip hi">Excel</span>
-            <span className="tool-chip hi">Pandas</span>
             <span className="tool-chip hi">Power BI</span>
-            <span className="tool-chip">React</span>
-            <span className="tool-chip">Node.js</span>
+            <span className="tool-chip hi">Python</span>
+            <span className="tool-chip hi">Pandas</span>
+            <span className="tool-chip hi">Excel</span>
+            <span className="tool-chip hi">Data-driven decision-making</span>
+            <span className="tool-chip hi">Data Visualization</span>
+            <span className="tool-chip hi">Data Cleaning</span>
+            <span className="tool-chip">Web Development</span>
           </div>
         </div>
       </div>

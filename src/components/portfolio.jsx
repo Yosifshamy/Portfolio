@@ -20,7 +20,7 @@ const Portfolio = () => {
       live: "https://tripolar.netlify.app/",
     },
     {
-      id: 3,
+      id: 2,
       name: "CineMirage",
       description: "Movie Recommendation App",
       category: "MERN Stack",
@@ -48,7 +48,8 @@ const Portfolio = () => {
 
       {/* ── ANALYTICS PROJECTS ── */}
       <div className="projects-grid">
-        {/* Featured */}
+
+        {/* Project 001 - Amazon India — FEATURED */}
         <div className="project-card featured reveal">
           <div>
             <div className="project-num">001 · FEATURED PROJECT</div>
@@ -57,10 +58,10 @@ const Portfolio = () => {
             </h3>
             <p className="project-desc">
               End-to-end analysis of 128,976 orders from a real Indian fashion
-              e-commerce brand. Cleaned raw data in Excel, wrote 5 SQL queries
-              in MySQL, and built an interactive Tableau dashboard revealing
-              ₹7Cr+ in revenue insights across products, states, and order
-              trends.
+              e-commerce brand. Cleaned raw data in Excel, wrote 5 optimized
+              SQL queries in MySQL, and built an interactive 5-page Tableau
+              dashboard — revealing ₹7Cr+ in revenue patterns across products,
+              states, and cancellation trends.
             </p>
             <div className="project-tags">
               <span className="tag">Excel</span>
@@ -82,15 +83,15 @@ const Portfolio = () => {
             <div className="finding">
               <div className="finding-num">INSIGHT 01</div>
               <p>
-                Sets dominate revenue at ₹3.5Cr with the highest avg order value
-                of ₹854 — nearly double Kurtas
+                Sets dominate revenue at ₹3.5Cr with the highest avg order
+                value of ₹854 — nearly double Kurtas
               </p>
             </div>
             <div className="finding">
               <div className="finding-num">INSIGHT 02</div>
               <p>
-                Maharashtra, Karnataka &amp; Telangana account for ~40% of total
-                revenue — prime markets for focused investment
+                Maharashtra, Karnataka &amp; Telangana account for ~40% of
+                total revenue — prime markets for focused investment
               </p>
             </div>
             <div className="finding">
@@ -103,59 +104,18 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Project 002 - Fitbit LIVE */}
-        <div className="project-card reveal">
-          <div className="project-num">003 COMPLETED</div>
-          <h3 className="project-title">
-            Telecom Customer Churn Analysis (Power BI)
-          </h3>
-          <p className="project-desc">
-            Built an end-to-end churn analysis dashboard on 7K+ telecom
-            customers. Cleaned the data in Power Query, created DAX measures for
-            churn KPIs, and designed an interactive Power BI report to reveal
-            which customer segments churn the most and why.
-          </p>
-          <div className="project-tags">
-            <span className="tag">Power BI</span>
-            <span className="tag">DAX</span>
-            <span className="tag">Power Query</span>
-            <span className="tag">Churn Analysis</span>
-          </div>
-          <div className="project-findings-sm">
-            <div className="finding-sm">
-              Churn rate tracked via{" "}
-              <strong>Churned Customers / Total Customers</strong>
-            </div>
-            <div className="finding-sm">
-              Highlighted high-risk segments by <strong>Contract</strong> and{" "}
-              <strong>Tenure Band</strong>
-            </div>
-            <div className="finding-sm">
-              Exposed top churn reasons such as <strong>Price</strong> and{" "}
-              <strong>Competitor</strong>
-            </div>
-          </div>
-          <a
-            href="https://github.com/Yosifshamy/Telecom-Customer-Churn-PowerBI"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-link"
-          >
-            View on GitHub →
-          </a>
-        </div>
-
-        {/* Project 003 - Telecom Churn - Power BI */}
+        {/* Project 002 - Fitbit */}
         <div className="project-card reveal">
           <div className="project-num">002 · COMPLETED PROJECT</div>
           <h3 className="project-title">
             Fitbit Health &amp; Fitness Trends Analysis
           </h3>
           <p className="project-desc">
-            Analyzed 940 daily records from 30 Fitbit users to uncover activity
-            patterns, sleep behavior, and step goal achievement. Full Python
-            analysis with Pandas, Matplotlib &amp; Seaborn — includes 6 charts
-            and actionable fitness app recommendations.
+            Python EDA on 940 daily activity and 410 sleep records from 30
+            Fitbit users. Cleaned data, engineered features, and produced 6
+            charts uncovering activity patterns, sleep behavior, and step goal
+            achievement — with actionable recommendations for fitness app
+            product decisions.
           </p>
           <div className="project-tags">
             <span className="tag">Python</span>
@@ -178,6 +138,50 @@ const Portfolio = () => {
           </div>
           <a
             href="https://github.com/Yosifshamy/fitbit-fitness-analysis"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View on GitHub →
+          </a>
+        </div>
+
+        {/* Project 003 - Telecom Churn */}
+        <div className="project-card reveal">
+          <div className="project-num">003 · COMPLETED PROJECT</div>
+          <h3 className="project-title">
+            Telecom Customer Churn Analysis
+          </h3>
+          <p className="project-desc">
+            End-to-end Power BI dashboard analyzing 7K+ telecom customer
+            records. Cleaned and transformed data in Power Query, built core
+            DAX measures for churn KPIs, and designed an interactive report
+            surfacing the highest-risk customer segments and the leading drivers
+            behind churn.
+          </p>
+          <div className="project-tags">
+            <span className="tag">Power BI</span>
+            <span className="tag">DAX</span>
+            <span className="tag">Power Query</span>
+            <span className="tag">Churn Analysis</span>
+            <span className="tag">7K rows</span>
+          </div>
+          <div className="project-findings-sm">
+            <div className="finding-sm">
+              Churn rate tracked via{" "}
+              <strong>Churned Customers / Total Customers</strong>
+            </div>
+            <div className="finding-sm">
+              Highlighted high-risk segments by <strong>Contract</strong> and{" "}
+              <strong>Tenure Band</strong>
+            </div>
+            <div className="finding-sm">
+              Exposed top churn drivers: <strong>Price</strong> and{" "}
+              <strong>Competitor</strong>
+            </div>
+          </div>
+          <a
+            href="https://github.com/Yosifshamy/Telecom-Customer-Churn-PowerBI"
             target="_blank"
             rel="noopener noreferrer"
             className="project-link"
