@@ -1,46 +1,50 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+const links = [
+  { href: "#work", label: "Projects" },
+  { href: "#experience", label: "Experience" },
+  { href: "#about", label: "About" },
+  { href: "#method", label: "How I work" },
+  { href: "#contact", label: "Contact" },
+];
 
 const NavBar = () => {
+  const [open, setOpen] = useState(false);
+
   useEffect(() => {
-    const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-
-    function mobileNavToggle() {
-      document.querySelector("body").classList.toggle("mobile-nav-active");
-      mobileNavToggleBtn.classList.toggle("bi-list");
-      mobileNavToggleBtn.classList.toggle("bi-x");
-    }
-
-    mobileNavToggleBtn.addEventListener("click", mobileNavToggle);
-
-    document.querySelectorAll("#navmenu a").forEach((link) => {
-      link.addEventListener("click", () => {
-        if (document.querySelector(".mobile-nav-active")) mobileNavToggle();
-      });
-    });
-
-    return () => {
-      mobileNavToggleBtn.removeEventListener("click", mobileNavToggle);
-    };
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   return (
-    <header id="header" className="header d-flex align-items-center sticky-top">
-      <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-        <a href="#home" className="logo d-flex align-items-center text-decoration-none">
-          <h1 className="sitename">
-            youssef<span>.</span>elshamy
-          </h1>
+    <header className={`site-header${open ? " is-open" : ""}`}>
+      <div className="wrap site-header__inner">
+        <a href="#top" className="site-name" onClick={() => setOpen(false)}>
+          Youssef Elshamy
         </a>
-        <nav id="navmenu" className="navmenu">
+
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={open}
+          aria-controls="site-nav"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? "Close" : "Menu"}
+        </button>
+
+        <nav id="site-nav" className="site-nav" aria-label="Main">
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Projects</a></li>
-            <li><a href="#resume">Approach</a></li>
-            <li><a href="#contact">Contact</a></li>
+            {links.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} onClick={() => setOpen(false)}>
+                  {l.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
-        <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </div>
     </header>
   );

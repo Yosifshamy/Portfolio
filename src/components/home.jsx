@@ -1,102 +1,137 @@
-import { useEffect, useRef } from "react";
-import Typed from "typed.js";
+const CV_URL = "/assets/Youssef_Elshamy_CV.pdf";
+
+const tools = [
+  "Gap analysis",
+  "SQL",
+  "Process mapping",
+  "Power BI",
+  "KPI definition",
+  "Tableau",
+  "Requirements elicitation",
+  "Excel",
+  "Stage-gate planning",
+  "Python",
+  "SWOT analysis",
+  "DAX",
+  "Risk registers",
+  "Power Query",
+];
+
+const Arrow = () => (
+  <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+    <path
+      d="M3 8h10M9 4l4 4-4 4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 const Home = () => {
-  const typedRef = useRef(null);
-
-  useEffect(() => {
-    const typed = new Typed(typedRef.current, {
-      strings: ["Data Analyst", "Business Analyst", "Insight Storyteller"],
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 40,
-      backDelay: 3000,
-    });
-    return () => typed.destroy();
-  }, []);
-
   return (
-    <section id="home" className="hero section">
-      {/* LEFT */}
-      <div className="hero-left">
-        <p className="hero-tag">Available for opportunities · Cairo, Egypt</p>
-        <h1 className="hero-name">
-          Youssef
-          <br />
-          <em>Elshamy</em>
-        </h1>
-        <div className="hero-typed-wrap">
-          <span ref={typedRef} />
+    <section id="top" className="hero">
+      <div className="hero__glow" aria-hidden="true" />
+
+      <div className="wrap hero__grid">
+        <div className="hero__copy">
+          <p className="hero__role">
+            <span className="dot" aria-hidden="true" />
+            Business Analyst in management consulting, Cairo
+          </p>
+          <h1 className="hero__title">
+            I work out what the business is really asking, then{" "}
+            <span className="grad">answer it with data.</span>
+          </h1>
+          <p className="hero__lede">
+            I diagnose organisational and commercial performance gaps, turn
+            stakeholder needs into requirements, KPIs and phased roadmaps, and
+            back every recommendation with hands-on analysis in SQL, Power BI,
+            Tableau, Python and Excel.
+          </p>
+          <div className="hero__actions">
+            <a href="#work" className="btn btn--solid">
+              See my projects
+              <Arrow />
+            </a>
+            <a
+              href={CV_URL}
+              className="btn btn--line"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open my CV
+            </a>
+          </div>
         </div>
-        <p className="hero-desc">
-          I turn raw, messy data into <strong>clear business decisions</strong>.
-          With a background in web development, I build analytics experiences
-          that most analysts simply can't.
-        </p>
-        <div className="hero-cta">
-          <a href="#portfolio" className="btn-primary-custom">
-            View my work →
+
+        <figure className="portrait">
+          <div className="portrait__frame">
+            <img
+              src="/assets/img/youssef.png"
+              alt="Youssef Elshamy in a navy suit and white shirt"
+              width="447"
+              height="558"
+            />
+          </div>
+          <figcaption className="chip chip--name">
+            <span className="chip__title">Youssef Elshamy</span>
+            <span className="chip__sub">Business Analyst, Industry 4.01</span>
+          </figcaption>
+          <a className="chip chip--cert" href="#certifications">
+            <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
+              <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.18" />
+              <path
+                d="M6 10.4l2.6 2.6L14 7.4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span>
+              <span className="chip__title">Google certified</span>
+              <span className="chip__sub">Advanced Data Analytics</span>
+            </span>
           </a>
-          <a
-            href="https://drive.google.com/file/d/1CDWBJA9TVZrR2eQfrYKwJqn9JA-XGHQF/view?usp=drive_link"
-            className="btn-primary-custom"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View my CV →
-          </a>
-          <a href="#contact" className="btn-outline-custom">
-            Get in touch
-          </a>
-        </div>
+        </figure>
       </div>
 
-      {/* RIGHT */}
-      <div className="hero-right">
-        <div className="stat-row">
-          <div className="stat-card">
-            <div className="stat-num cert">135K+</div>
-            <div className="stat-label">rows analyzed</div>
+      <div className="wrap">
+        <dl className="stats">
+          <div>
+            <dd>2</dd>
+            <dt>client strategy engagements in 2026</dt>
           </div>
-          <div className="stat-card dark">
-            <div className="stat-num cert">Microsoft Certified</div>
-            <div className="stat-label">In progress · PL-300</div>
+          <div>
+            <dd>10</dd>
+            <dt>business functions assessed in one maturity diagnostic</dt>
           </div>
-        </div>
-        <div className="stat-row">
-          <div className="stat-card">
-            <div className="stat-num cert">3</div>
-            <div className="stat-label">end-to-end projects</div>
+          <div>
+            <dd>36 weeks</dd>
+            <dt>recovery programme structured in five sprints</dt>
           </div>
-          <div className="stat-card dark">
-            <div className="stat-num cert">Google Certified</div>
-            <div className="stat-label">
-              <a
-                className="stat-label"
-                href="https://drive.google.com/file/d/1UGjq_Sf2Bgsu3ML5_znR-EddaeTYBpOf/view?usp=drive_link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Preview →
-              </a>
-            </div>
+          <div>
+            <dd>3</dd>
+            <dt>certifications from Google and DEPI</dt>
           </div>
-        </div>
-        <div className="tools-card">
-          <div className="tools-title">Analytics stack</div>
-          <div className="tools-list">
-            <span className="tool-chip hi">SQL / MySQL</span>
-            <span className="tool-chip hi">Tableau</span>
-            <span className="tool-chip hi">Power BI</span>
-            <span className="tool-chip hi">Python</span>
-            <span className="tool-chip hi">Pandas</span>
-            <span className="tool-chip hi">Excel</span>
-            <span className="tool-chip hi">Data-driven decision-making</span>
-            <span className="tool-chip hi">Data Visualization</span>
-            <span className="tool-chip hi">Data Cleaning</span>
-            <span className="tool-chip">Web Development</span>
-          </div>
-        </div>
+        </dl>
+      </div>
+
+      <div className="tools" aria-label="Methods and tools I work with">
+        <ul className="tools__track">
+          {tools.map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+          {tools.map((t) => (
+            <li key={`${t}-copy`} aria-hidden="true">
+              {t}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

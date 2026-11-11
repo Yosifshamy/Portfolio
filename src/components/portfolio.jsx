@@ -1,276 +1,228 @@
-import { useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
+// Client work. Both clients are confidential, so they are described, not named.
+const engagements = [
+  {
+    id: "maturity",
+    title: "Organisational Maturity Restoration Strategy",
+    sector: "Agri-food",
+    client: "Producer and exporter, client confidential",
+    year: "2026",
+    question:
+      "Where is the organisation's maturity breaking down, and in what order should the functions be rebuilt?",
+    findings: [
+      {
+        figure: "10 functions",
+        text: "assessed for maturity to set a baseline score. HR was isolated as the keystone gap holding back every other function.",
+      },
+      {
+        figure: "Systems, not people",
+        text: "The root cause was system weakness rather than capability weakness. Results depended on the founder and on departing staff instead of documented processes.",
+      },
+      {
+        figure: "40% shorter",
+        text: "timeline, achieved by sequencing the sprints by dependency and staggering them.",
+      },
+    ],
+    delivered: [
+      "A 36-week, five-sprint recovery programme covering HR, Sales and BD, Sourcing, Quality and Food Safety, and Make-or-Buy.",
+      "A repeatable 12-week sprint model (Diagnose, Solution, Implement, Reassess) with gate-based funding, so each sprint is re-scored before the next one is funded.",
+      "Measurable gate criteria per sprint: function maturity scores, CRM adoption, receivables days, customer concentration limits and food-safety recall readiness.",
+      "Five governance outputs for every sprint (policy, SOPs, Delegation of Authority, KPI control loop, risk register), projected to more than double the governance score.",
+      "A utilisation-based make-or-buy decision matrix for support functions, and an execution risk register with controls.",
+    ],
+  },
+  {
+    id: "growth",
+    title: "Digital Marketing and Growth Strategy 2026–2028",
+    sector: "Industrial automation",
+    client:
+      "Automation and MEP solutions provider in Egypt and Saudi Arabia, client confidential",
+    year: "2026",
+    question:
+      "How does a technically proven firm stop relying on one executive's network for new business?",
+    findings: [
+      {
+        figure: "Situation analysis",
+        text: "of internal strengths and gaps and external opportunities and threats, for a firm serving food and beverage manufacturers.",
+      },
+      {
+        figure: "A visibility gap",
+        text: "The core problem was the distance between proven technical capability and digital visibility.",
+      },
+      {
+        figure: "One network",
+        text: "New business relied on a single executive's personal relationships.",
+      },
+    ],
+    delivered: [
+      "A strategy built on three service pillars, moving the firm from relationship-led sales to digital lead generation.",
+      "A three-sprint digital roadmap over 30, 90 and 180 days: a specialised website, case-study video content, then targeted LinkedIn campaigns.",
+      "A KPI framework across sales, marketing and operations, including a 5x revenue growth target by 2028, monthly content and engagement targets, and 100% on-time delivery.",
+      "The final recommendations, including a site-visit call-to-action, educational technical content and a machine-retrofit service package.",
+    ],
+  },
+];
+
+// Self-directed analysis projects: the hands-on side of the same work.
+const analyses = [
+  {
+    id: "amazon",
+    title: "Amazon India fashion sales",
+    tools: "Excel, MySQL, Tableau",
+    scope: "128,976 orders",
+    question: "Where does revenue come from, and where is it being lost?",
+    findings: [
+      { figure: "₹3.5Cr", text: "from Sets, the top category" },
+      { figure: "~40%", text: "of revenue from three states" },
+      { figure: "14%", text: "of orders cancelled" },
+    ],
+    link: {
+      href: "https://public.tableau.com/views/AmazonIndiaFashionSalesAnalysis/AmazonSalesDashboard",
+      label: "Open the Tableau dashboard",
+    },
+  },
+  {
+    id: "churn",
+    title: "Telecom customer churn",
+    tools: "Power BI, DAX, Power Query",
+    scope: "7,000+ customer records",
+    question: "Which customers are most likely to leave, and why?",
+    findings: [
+      { figure: "Contract and tenure", text: "mark out the high-risk segments" },
+      { figure: "Price and competitors", text: "are the leading churn drivers" },
+    ],
+    link: {
+      href: "https://github.com/Yosifshamy/Telecom-Customer-Churn-PowerBI",
+      label: "See the report on GitHub",
+    },
+  },
+  {
+    id: "fitbit",
+    title: "Fitbit health and fitness trends",
+    tools: "Python, Pandas, Seaborn",
+    scope: "940 daily activity records",
+    question: "What do users actually do day to day?",
+    findings: [
+      { figure: "32.2%", text: "of days reach the 10K step goal" },
+      { figure: "81.3%", text: "of the day spent sedentary" },
+      { figure: "−0.60", text: "correlation, sedentary time and sleep" },
+    ],
+    link: {
+      href: "https://github.com/Yosifshamy/fitbit-fitness-analysis",
+      label: "Read the analysis on GitHub",
+    },
+  },
+];
+
+// Moves a soft light under the cursor as it crosses a card
+const trackPointer = (e) => {
+  const r = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+  e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+};
 
 const Portfolio = () => {
-  const mernProjects = [
-    {
-      id: 1,
-      name: "Tripolar",
-      description: "Event Management Website",
-      category: "MERN Stack",
-      date: "15 October, 2025",
-      images: [
-        "./assets/img/tripolar-1.png",
-        "./assets/img/tripolar-2.png",
-        "./assets/img/tripolar-3.png",
-        "./assets/img/tripolar-4.png",
-        "./assets/img/tripolar-5.png",
-        "./assets/img/tripolar-6.png",
-      ],
-      live: "https://tripolar.netlify.app/",
-    },
-    {
-      id: 2,
-      name: "CineMirage",
-      description: "Movie Recommendation App",
-      category: "MERN Stack",
-      date: "16 May, 2025",
-      images: [
-        "./assets/img/CineMirage-1.png",
-        "./assets/img/CineMirage-2.png",
-        "./assets/img/CineMirage-3.png",
-      ],
-      live: "https://mahmoudsaad1307.github.io/DEPI-MoviesApp/",
-    },
-  ];
-
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const openModal = (project) => setSelectedProject(project);
-  const closeModal = () => setSelectedProject(null);
-
   return (
-    <section id="portfolio" className="portfolio section">
-      <div className="section-title-block reveal">
-        <span className="section-num">02</span>
-        <h2>Projects</h2>
-      </div>
-
-      {/* ── ANALYTICS PROJECTS ── */}
-      <div className="projects-grid">
-
-        {/* Project 001 - Amazon India — FEATURED */}
-        <div className="project-card featured reveal">
-          <div>
-            <div className="project-num">001 · FEATURED PROJECT</div>
-            <h3 className="project-title">
-              Amazon India Fashion Sales Analysis
-            </h3>
-            <p className="project-desc">
-              End-to-end analysis of 128,976 orders from a real Indian fashion
-              e-commerce brand. Cleaned raw data in Excel, wrote 5 optimized
-              SQL queries in MySQL, and built an interactive 5-page Tableau
-              dashboard — revealing ₹7Cr+ in revenue patterns across products,
-              states, and cancellation trends.
-            </p>
-            <div className="project-tags">
-              <span className="tag">Excel</span>
-              <span className="tag">MySQL</span>
-              <span className="tag">Tableau</span>
-              <span className="tag">E-commerce</span>
-              <span className="tag">128K rows</span>
-            </div>
-            <a
-              href="https://public.tableau.com/views/AmazonIndiaFashionSalesAnalysis/AmazonSalesDashboard"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link"
-            >
-              View live dashboard →
-            </a>
-          </div>
-          <div className="project-findings">
-            <div className="finding">
-              <div className="finding-num">INSIGHT 01</div>
-              <p>
-                Sets dominate revenue at ₹3.5Cr with the highest avg order
-                value of ₹854 — nearly double Kurtas
-              </p>
-            </div>
-            <div className="finding">
-              <div className="finding-num">INSIGHT 02</div>
-              <p>
-                Maharashtra, Karnataka &amp; Telangana account for ~40% of
-                total revenue — prime markets for focused investment
-              </p>
-            </div>
-            <div className="finding">
-              <div className="finding-num">INSIGHT 03</div>
-              <p>
-                14% cancellation rate across all categories signals a systemic
-                sizing or delivery issue worth investigating
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Project 002 - Fitbit */}
-        <div className="project-card reveal">
-          <div className="project-num">002 · COMPLETED PROJECT</div>
-          <h3 className="project-title">
-            Fitbit Health &amp; Fitness Trends Analysis
-          </h3>
-          <p className="project-desc">
-            Python EDA on 940 daily activity and 410 sleep records from 30
-            Fitbit users. Cleaned data, engineered features, and produced 6
-            charts uncovering activity patterns, sleep behavior, and step goal
-            achievement — with actionable recommendations for fitness app
-            product decisions.
+    <section id="work" className="work">
+      <div className="wrap">
+        <header className="section-head reveal">
+          <h2>Consulting projects</h2>
+          <p>
+            Two client engagements from 2026. Each started with a business that
+            knew something was wrong, and ended with a diagnosis, a roadmap and
+            measurable targets.
           </p>
-          <div className="project-tags">
-            <span className="tag">Python</span>
-            <span className="tag">Pandas</span>
-            <span className="tag">Seaborn</span>
-            <span className="tag">Jupyter</span>
-            <span className="tag">940 rows</span>
-          </div>
-          <div className="project-findings-sm">
-            <div className="finding-sm">
-              Only <strong>32.2%</strong> of days users hit the 10K step goal
-            </div>
-            <div className="finding-sm">
-              Users spend <strong>81.3%</strong> of their day sedentary
-            </div>
-            <div className="finding-sm">
-              Sedentary time &amp; sleep: strong <strong>-0.60</strong>{" "}
-              correlation
-            </div>
-          </div>
-          <a
-            href="https://github.com/Yosifshamy/fitbit-fitness-analysis"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-link"
-          >
-            View on GitHub →
-          </a>
-        </div>
+        </header>
 
-        {/* Project 003 - Telecom Churn */}
-        <div className="project-card reveal">
-          <div className="project-num">003 · COMPLETED PROJECT</div>
-          <h3 className="project-title">
-            Telecom Customer Churn Analysis
-          </h3>
-          <p className="project-desc">
-            End-to-end Power BI dashboard analyzing 7K+ telecom customer
-            records. Cleaned and transformed data in Power Query, built core
-            DAX measures for churn KPIs, and designed an interactive report
-            surfacing the highest-risk customer segments and the leading drivers
-            behind churn.
-          </p>
-          <div className="project-tags">
-            <span className="tag">Power BI</span>
-            <span className="tag">DAX</span>
-            <span className="tag">Power Query</span>
-            <span className="tag">Churn Analysis</span>
-            <span className="tag">7K rows</span>
-          </div>
-          <div className="project-findings-sm">
-            <div className="finding-sm">
-              Churn rate tracked via{" "}
-              <strong>Churned Customers / Total Customers</strong>
-            </div>
-            <div className="finding-sm">
-              Highlighted high-risk segments by <strong>Contract</strong> and{" "}
-              <strong>Tenure Band</strong>
-            </div>
-            <div className="finding-sm">
-              Exposed top churn drivers: <strong>Price</strong> and{" "}
-              <strong>Competitor</strong>
-            </div>
-          </div>
-          <a
-            href="https://github.com/Yosifshamy/Telecom-Customer-Churn-PowerBI"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-link"
-          >
-            View on GitHub →
-          </a>
-        </div>
-      </div>
-
-      {/* ── MERN PROJECTS ── */}
-      <div className="mern-section reveal">
-        <div className="mern-label">Previous work · Full Stack Development</div>
-        <div className="mern-grid">
-          {mernProjects.map((project) => (
-            <div
-              key={project.id}
-              className="mern-card"
-              onClick={() => openModal(project)}
+        <div className="briefs">
+          {engagements.map((b) => (
+            <article
+              className="brief reveal"
+              key={b.id}
+              aria-labelledby={`${b.id}-title`}
+              onMouseMove={trackPointer}
             >
-              <img src={project.images[0]} alt={project.name} />
-              <div className="mern-overlay">
-                <h4>{project.name}</h4>
-                <p>{project.description}</p>
+              <header className="brief__head">
+                <h3 id={`${b.id}-title`}>{b.title}</h3>
+                <p className="brief__meta">
+                  <span className="pill">{b.sector}</span>
+                  <span>{b.client}</span>
+                  <span>{b.year}</span>
+                </p>
+              </header>
+
+              <div className="brief__body">
+                <div className="brief__question">
+                  <h4>The question</h4>
+                  <p>{b.question}</p>
+                </div>
+
+                <div className="brief__col">
+                  <h4>What the diagnosis showed</h4>
+                  <ul className="findings">
+                    {b.findings.map((f) => (
+                      <li key={f.figure}>
+                        <strong className="figure">{f.figure}</strong>
+                        <span>{f.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="brief__col">
+                  <h4>What I delivered</h4>
+                  <ol className="actions">
+                    {b.delivered.map((a) => (
+                      <li key={a}>{a}</li>
+                    ))}
+                  </ol>
+                </div>
               </div>
-            </div>
+            </article>
+          ))}
+        </div>
+
+        <header className="section-head section-head--sub reveal">
+          <h2>Data analysis projects</h2>
+          <p>
+            The hands-on side: three self-directed analyses in SQL, Power BI,
+            Tableau and Python.
+          </p>
+        </header>
+
+        <div className="minis">
+          {analyses.map((a) => (
+            <article
+              className="mini reveal"
+              key={a.id}
+              aria-labelledby={`${a.id}-title`}
+              onMouseMove={trackPointer}
+            >
+              <p className="mini__tools">{a.tools}</p>
+              <h3 id={`${a.id}-title`}>{a.title}</h3>
+              <p className="mini__question">{a.question}</p>
+              <ul className="mini__findings">
+                {a.findings.map((f) => (
+                  <li key={f.figure}>
+                    <strong className="figure">{f.figure}</strong>
+                    <span>{f.text}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mini__foot">
+                <span>{a.scope}</span>
+                <a
+                  className="text-link"
+                  href={a.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {a.link.label}
+                </a>
+              </p>
+            </article>
           ))}
         </div>
       </div>
-
-      {/* ── MODAL ── */}
-      {selectedProject && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>
-              <i className="bi bi-x" />
-            </button>
-            <div className="modal-body">
-              <div className="row justify-content-between gy-4">
-                <div className="col-lg-8">
-                  <Carousel className="portfolio-details-slider">
-                    {selectedProject.images.map((img, i) => (
-                      <Carousel.Item key={i} interval={3000}>
-                        <img
-                          src={img}
-                          alt={`${selectedProject.name} ${i + 1}`}
-                          className="d-block w-100"
-                        />
-                      </Carousel.Item>
-                    ))}
-                  </Carousel>
-                  <div className="mt-4">
-                    <h2 className="modal-project-title">
-                      {selectedProject.name}
-                    </h2>
-                    <p className="modal-project-desc">
-                      {selectedProject.description}
-                    </p>
-                  </div>
-                </div>
-                <div className="col-lg-4">
-                  <div className="portfolio-info">
-                    <h3>Project info</h3>
-                    <ul>
-                      <li>
-                        <strong>Category</strong>
-                        {selectedProject.category}
-                      </li>
-                      <li>
-                        <strong>Date</strong>
-                        {selectedProject.date}
-                      </li>
-                      <li>
-                        <strong>Live demo</strong>
-                        <a
-                          href={selectedProject.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Open project →
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

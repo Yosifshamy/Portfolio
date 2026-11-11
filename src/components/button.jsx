@@ -3,20 +3,31 @@ import { useState, useEffect } from "react";
 const Button = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const scrollUp = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
   useEffect(() => {
-    const toggleVisibility = () => setIsVisible(window.scrollY > 200);
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    const onScroll = () => setIsVisible(window.scrollY > 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <button
-      className={`scroll-top d-flex align-items-center justify-content-center ${isVisible ? "visible" : "hidden"}`}
-      onClick={scrollUp}
+      type="button"
+      className={`to-top${isVisible ? " is-visible" : ""}`}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Back to top"
+      tabIndex={isVisible ? 0 : -1}
     >
-      <i className="bi bi-arrow-up-short" />
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+        <path
+          d="M8 13V3M3.5 7.5 8 3l4.5 4.5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
     </button>
   );
 };
