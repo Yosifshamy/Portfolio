@@ -1,4 +1,4 @@
-const CV_URL = "/assets/Youssef_Elshamy_CV.pdf";
+const CV_URL = "https://drive.google.com/file/d/1odT4ewQUndlqIJs4qik084XNbhZFKoCa/view?usp=sharing";
 
 const tools = [
   "Gap analysis",
